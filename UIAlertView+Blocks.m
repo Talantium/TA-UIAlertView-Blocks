@@ -31,7 +31,7 @@ const void* UIAlertViewBlocksBlockKey;
         // Save the block as associative object to self using key
         objc_setAssociatedObject(self,
                                  UIAlertViewBlocksBlockKey,
-                                 [[confirmBlock copy] autorelease],
+                                 [confirmBlock copy],
                                  OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 	}
     
@@ -64,8 +64,6 @@ const void* UIAlertViewBlocksBlockKey;
                              UIAlertViewBlocksBlockKey,
                              nil,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-
-    [super dealloc];
 }
 
 @end
